@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "mocha"
   #spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "yard"
+  spec.add_development_dependency "redcarpet"
 end
