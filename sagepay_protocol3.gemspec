@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Michael de Silva"]
   spec.email         = ["michael@mwdesilva.com"]
   spec.homepage      = "http://mwdesilva.com"
-  spec.summary       = "Ruby implementation of the SagePay payment gateway protocol v3."
+  spec.summary       = "Encryption in Ruby to interface with SagePay's payment gateway protocol v3."
   spec.description   = spec.summary
   spec.license       = "MIT"
 
