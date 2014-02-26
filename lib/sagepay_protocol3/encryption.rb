@@ -31,6 +31,10 @@ module SagepayProtocol3
     def sanitize_payload(string)
       string.gsub(/\005/, '').gsub("\r", '').gsub("\n", '')
     end
+
+    def to_h(crypt_string)
+      Hash[*crypt_string.split(/[=&]/)]
+    end
   end
 
 end

@@ -44,6 +44,43 @@ module SagepayProtocol3
           expect(result).to eq(TestRunner.cipher_text)
         end
       end
+
+      describe "#to_h" do
+        it "should return the crypt_string data as a Hash" do
+          cipher_text = TestRunner.cipher_text
+          encryption_key = "55a51621a6648525"
+
+          result = SagepayProtocol3::Encryption.decrypt(encryption_key, cipher_text)
+
+          expect(result).to eq(TestRunner.crypt_string)
+          expect(SagepayProtocol3::Encryption.to_h(result)).to eq(
+            {
+              "Amount" => "36.95",
+              "BillingAddress1" => "BillAddress Line 1",
+              "BillingCity" => "BillCity",
+              "BillingCountry" => "GB",
+              "BillingFirstnames" => "Fname",
+              "BillingPhone" => "447933000000",
+              "BillingPostCode" => "W1A 1BL",
+              "BillingSurname" => "Surname",
+              "Currency" => "GBP",
+              "CustomerEMail" => "customer@example.com",
+              "CustomerName" => "Fname Surname",
+              "DeliveryAddress1" => "BillAddress Line 1",
+              "DeliveryCity" => "BillCity",
+              "DeliveryCountry" => "GB",
+              "DeliveryFirstnames" => "Fname",
+              "DeliveryPhone" => "447933000000",
+              "DeliveryPostCode" => "W1A 1BL",
+              "DeliverySurname" => "Surname",
+              "Description" => "description",
+              "FailureURL" => "https://example.com/failure",
+              "SuccessURL" => "https://example.com/success",
+              "VendorTxCode" => "TxCode-1310917599-223087284"
+            }
+          )
+        end
+      end
     end
 
   end
