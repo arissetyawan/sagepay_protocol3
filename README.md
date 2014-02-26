@@ -1,6 +1,13 @@
 # SagepayProtocol3
 
+[![Build Status](https://travis-ci.org/bsodmike/sagepay_protocol3.png?branch=master)](https://travis-ci.org/bsodmike/sagepay_protocol3)
+
 Ruby implementation of the SagePay payment gateway protocol v3.
+
+## Compatibility
+
+* Supports multiple Ruby versions: Ruby 1.8.7, 1.9.3, 2.0.0 (see
+Travis build status).
 
 ## Installation
 
