@@ -6,7 +6,7 @@ Encryption in Ruby to interface with SagePay's payment gateway protocol v3.
 
 ## Compatibility
 
-* Supports multiple Ruby versions: Ruby 1.8.7, 1.9.3, 2.0.0 (see
+* Supports multiple Ruby versions: Ruby 1.9.3, 2.0.0, 2.1.3 (see
 Travis build status).
 
 ## Installation
