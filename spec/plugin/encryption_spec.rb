@@ -1,6 +1,5 @@
 # encoding: utf-8
 require 'spec_helper'
-require 'sagepay_protocol3/encryption'
 
 module SagepayProtocol3
 
