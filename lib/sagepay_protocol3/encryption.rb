@@ -33,7 +33,7 @@ module SagepayProtocol3
     end
 
     def to_h(crypt_string)
-      Hash[*crypt_string.split(/[=&]/)]
+      Hash[*crypt_string.split(/[=&]/).reject(&:blank?)]
     end
   end
 
