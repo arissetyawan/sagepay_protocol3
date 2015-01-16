@@ -1,5 +1,7 @@
 # encoding: utf-8
 require 'sagepay_protocol3'
+require 'rails/all'
+require 'rspec/rails'
 require 'mocha/api'
 require 'pry'
 

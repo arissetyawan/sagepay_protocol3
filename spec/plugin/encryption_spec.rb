@@ -79,7 +79,27 @@ module SagepayProtocol3
             }
           )
         end
+
+        context "given a delimited decrypted payload string" do
+
+          let(:result) do
+            "VendorTxCode=R045302057&VPSTxId={B2BA07A8-13F0-56B2-8A67-C54A691149EA}&Status=OK&StatusDetail=0000 : The Authorisation was Successful.&TxAuthNo=1326452541&AVSCV2=SECURITY CODE MATCH ONLY&AddressResult=NOTMATCHED&PostCodeResult=NOTMATCHED&CV2Result=MATCHED&GiftAid=0&3DSecureStatus=OK&CAVV=AAACAYQDOAAAACgHgwM4AAAAAAA=&CardType=VISA&Last4Digits=8125&DeclineCode=00&Amount=10.24&BankAuthCode=094233\x04\x04\x04\x04"
+          end
+
+          it "should return the data as a Hash" do
+            expect(SagepayProtocol3::Encryption.to_h(result)).to eq(
+              {"VendorTxCode"=>"R045302057", "VPSTxId"=>"{B2BA07A8-13F0-56B2-8A67-C54A691149EA}", "Status"=>"OK", "StatusDetail"=>"0000 : The Authorisation was Successful.", "TxAuthNo"=>"1326452541", "AVSCV2"=>"SECURITY CODE MATCH ONLY", "AddressResult"=>"NOTMATCHED", "PostCodeResult"=>"NOTMATCHED", "CV2Result"=>"MATCHED", "GiftAid"=>"0", "3DSecureStatus"=>"OK", "CAVV"=>"AAACAYQDOAAAACgHgwM4AAAAAAA", "CardType"=>"VISA", "Last4Digits"=>"8125", "DeclineCode"=>"00", "Amount"=>"10.24", "BankAuthCode"=>"094233\x04\x04\x04\x04"}
+            )
+          end
+        end
+
       end
+
+
+
+
+
+
     end
 
   end
